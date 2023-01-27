@@ -14,8 +14,16 @@ jobs:
     # Build Doxygen documentation
     # mattnotmitt/doxygen-action
     # https://github.com/marketplace/actions/doxygen-action
-
+    name: Install Doxygen
+      run: sudo apt-get install doxygen -y
+    name: Generate Doxygen documentation
+      run: doxygen Doxyfile
+    
     # Deploy Doxygen documentation
     # peaceiris/actions-gh-pages
     # https://github.com/peaceiris/actions-gh-pages
-
+    name: Deploy documentation to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+      github_token: ${{ secrets.GITHUB_TOKEN }}
+      publish_dir: ./html
