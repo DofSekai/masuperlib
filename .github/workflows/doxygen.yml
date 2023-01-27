@@ -15,9 +15,11 @@ jobs:
     # mattnotmitt/doxygen-action
     # https://github.com/marketplace/actions/doxygen-action
     name: Install Doxygen
-      run: sudo apt-get install doxygen -y
+      run: |
+        sudo apt-get install doxygen -y
     name: Generate Doxygen documentation
-      run: doxygen Doxyfile
+      run: |
+        doxygen Doxyfile
     
     # Deploy Doxygen documentation
     # peaceiris/actions-gh-pages
