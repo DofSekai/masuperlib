@@ -22,7 +22,7 @@ jobs:
         mkdir build
         cd build
         cmake ..
-        cmake
+        make
 
     # Run tests
 
